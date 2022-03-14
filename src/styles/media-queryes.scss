@@ -1,0 +1,50 @@
+@import './variables.scss';
+
+// desktop
+@mixin desktop {
+    @media screen and (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
+
+// laptop
+@mixin laptop {
+    @media screen and (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+// tablet landscape
+@mixin tablet-l {
+    @media screen and (min-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+
+// 1023 to mobile
+@mixin mobile_tablet-l {
+    @media screen and (max-width: #{$screen-md-max}) {
+        @content;
+    }
+}
+
+// tablet portrait
+@mixin tablet-p {
+    @media screen and (min-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+// mobile
+@mixin mobile {
+    @media screen and (max-width: #{$screen-sm-max}) {
+        @content;
+    }
+}
+
+// small mobile
+@mixin mobile_small {
+    @media screen and (max-width: #{$screen-xs-max}) {
+        @content;
+    }
+}

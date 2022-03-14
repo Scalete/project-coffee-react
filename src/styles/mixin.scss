@@ -1,0 +1,27 @@
+@import './variables.scss';
+
+@mixin hover {
+    @media (hover: hover) and (pointer:fine) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@function res($minValue, $maxValue, $symbol: plus, $minWidth: 375, $maxWidth: 1920) {
+    @if $symbol == plus {
+        @return calc(#{$minValue}px + (#{$maxValue} - #{$minValue}) * ((100vw - #{$minWidth}px) / (#{$maxWidth} - #{$minWidth})));
+    } @else {
+        @return calc(-1 * (#{$minValue}px + (#{$maxValue} - #{$minValue}) * ((100vw - #{$minWidth}px) / (#{$maxWidth} - #{$minWidth}))));
+    }
+}
+
+@mixin anim-underline-link($line-color: #fff) {
+    background: left 0 bottom 5% / 0% .08em no-repeat linear-gradient($line-color, $line-color);
+    transition: background-size $normal;
+
+    @include hover {
+        background-size: 100% .08em;
+        background-position: 0% 95%;
+    }
+}
