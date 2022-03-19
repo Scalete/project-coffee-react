@@ -1,0 +1,23 @@
+@import '../../styles/media-queryes.scss';
+
+.about {
+    display: flex;
+    padding-top: 80px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .coffee-title {
+        margin-bottom: 21px;
+    }
+
+    .about-description {
+        margin: 0 auto;
+        max-width: 589px;
+    }
+
+    @include mobile {
+        padding: 40px 10px 0;
+    }
+}
